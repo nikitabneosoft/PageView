@@ -11,6 +11,9 @@ import Combine
 
 
 @available(iOS 13.0, *)
+
+
+//Only for all types of Views
 public struct PageViewNew: View {
     @EnvironmentObject var pageViewClass : PageViewClass
     
@@ -51,7 +54,7 @@ public struct PageViewNew: View {
                 self.curDragOffset = $0.translation.width;
                 self.state = .dragging
         }
-            
+    
         .onEnded { theGesture in
             withAnimation(.linear(duration: self.animDuration)) {
                 
@@ -89,9 +92,15 @@ public struct PageViewNew: View {
                                 self.incomingPage()
                                     .offset(x: self.nextPageOffset()).frame(width: g.size.width, height: self.height).clipped()
                                 
-                                PageControl(defaultImage: Image(systemName: "circle")
-                                    .resizable()
-                                    , selectedImage: Image(systemName: "circle.fill").resizable(), count: self.pageArrayViews.count, curPage: self.curPage).offset(x: self.width / 2 , y: self.height * 0.8)
+                                HStack {
+                                    Color.red
+                                    PageControl(defaultImage: Image(systemName: "circle")
+                                                                       .resizable()
+                                                                       , selectedImage: Image(systemName: "circle.fill").resizable(), count: self.pageArrayViews.count, curPage: self.curPage).offset(x: self.width / 2 , y: self.height * 0.8)
+                                    Spacer()
+                                }
+                                
+                               
                             }
                             if self.loopMode == false {
                                 HStack {
@@ -302,7 +311,7 @@ extension PageViewNew {
     
 }
 
-//Only for images
+//Only for image View
 
 //import SwiftUI
 //
