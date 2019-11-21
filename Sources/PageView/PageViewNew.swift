@@ -93,8 +93,6 @@ public struct PageViewNew: View {
                                     .offset(x: self.nextPageOffset()).frame(width: g.size.width, height: self.height).clipped()
                                 
                                 VStack(alignment: .center) {
-                                    Spacer()
-                                    
                                     PageControl(defaultImage: Image(systemName: "circle")
                                                                        .resizable()
                                                                        , selectedImage: Image(systemName: "circle.fill").resizable(), count: self.pageArrayViews.count, curPage: self.curPage)
@@ -278,6 +276,7 @@ public struct PageControl: View{
     
     public var body: some View {
         HStack(alignment: .center){
+            Spacer()
             ForEach(0..<count) { i in
                 self.curPage == i ? self.selectedImage.frame(width:10, height:10).foregroundColor(.white) :  self.defaultImage.frame(width:10, height:10).foregroundColor(.white)
             }
