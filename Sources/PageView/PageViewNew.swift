@@ -92,8 +92,7 @@ public struct PageViewNew: View {
                                 self.incomingPage()
                                     .offset(x: self.nextPageOffset()).frame(width: g.size.width, height: self.height).clipped()
                                 
-                                HStack(alignment: .center) {
-                                    Color.yellow
+                                VStack(alignment: .center) {
                                     Spacer()
                                     
                                     PageControl(defaultImage: Image(systemName: "circle")
