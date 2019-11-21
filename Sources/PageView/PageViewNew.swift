@@ -278,10 +278,10 @@ public struct PageControl: View{
         HStack(alignment: .center){
             Spacer()
             ForEach(0..<count) { i in
-                self.curPage == i ? self.selectedImage.frame(width:10, height:10).foregroundColor(.white) :  self.defaultImage.frame(width:10, height:10).foregroundColor(.white)
+                self.curPage == i ? self.selectedImage.frame(width:10, height:10).foregroundColor(.black) :  self.defaultImage.frame(width:10, height:10).foregroundColor(.black)
             }
              Spacer()
-        }.background(Color.yellow)
+        }
     }
 }
 @available(iOS 13.0, *)
