@@ -63,7 +63,7 @@ public struct PageViewNew: View {
                 self.culculateNextPage()
             }
             
-            Timer.scheduledTimer(withTimeInterval: self.animDuration, repeats: false) {_ in
+            Timer.scheduledTimer(withTimeInterval: self.animDuration, repeats: true) {_ in
                 if self.state == .animating{
                     self.state = .idle
                 }
