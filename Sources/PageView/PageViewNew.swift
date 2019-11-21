@@ -92,12 +92,15 @@ public struct PageViewNew: View {
                                 self.incomingPage()
                                     .offset(x: self.nextPageOffset()).frame(width: g.size.width, height: self.height).clipped()
                                 
-                                HStack {
-                                    Color.red
+                                HStack(alignment: .center) {
+                                    Color.yellow
+                                    Spacer()
+                                    
                                     PageControl(defaultImage: Image(systemName: "circle")
                                                                        .resizable()
-                                                                       , selectedImage: Image(systemName: "circle.fill").resizable(), count: self.pageArrayViews.count, curPage: self.curPage).offset(x: self.width / 2 , y: self.height * 0.8)
+                                                                       , selectedImage: Image(systemName: "circle.fill").resizable(), count: self.pageArrayViews.count, curPage: self.curPage).offset( y: self.height * 0.8)
                                     Spacer()
+                                    
                                 }
                                 
                                
