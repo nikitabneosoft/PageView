@@ -95,7 +95,7 @@ public struct PageViewNew: View {
                                 VStack(alignment: .center) {
                                     PageControl(defaultImage: Image(systemName: "circle")
                                                                        .resizable()
-                                                                       , selectedImage: Image(systemName: "circle.fill").resizable(), count: self.pageArrayViews.count, curPage: self.curPage)
+                                        , selectedImage: Image(systemName: "circle.fill").resizable(), count: self.pageArrayViews.count, curPage: self.curPage).offset(y:self.height * 0.8 )
                                     Spacer()
                                     
                                 }
